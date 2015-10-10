@@ -1,16 +1,30 @@
 
 package caesarCipher.driver;
 
+import caesarCipher.decrypt.CreateWorkers;
+import caesarCipher.store.DecodedStore;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+import caesarCipher.util.FileProcessor;
+import caesarCipher.util.Logger;
+import caesarCipher.decrypt.CaesarDecrypt;
+import java.io.File;
+
 public class Driver{
 
 	public static void main(String[] args) {
 
-		
-		String cipherText;	
-	    String decodedText;
-		int n;
-		int numThreads;
-		int debugValue;
+	/*
+	 *Default values if no command line args are passed
+	 *-------------------------------------------------
+	 */
+		String cipherText = "input.txt";	
+	    String decodedText = "output.txt";
+		int n = 1;
+		int numThreads = 1;
+		int debugValue = 1;
+	//--------------------------------------------------
 		if(args.length == 5)
 		{
 			cipherText = args[0];	
@@ -36,7 +50,20 @@ public class Driver{
 			System.err.println("invalid number of arguments program terminating");
 			System.exit(1);
 		}
-
+		
+		Logger.setDebugValue(debugValue);
+		
+		
+		File cipherFile = new File(cipherText);
+		
+		CaesarDecrypt decrypter = new CaesarDecrypt();
+		DecodedStore storedDecodedLines = new DecodedStore();
+		FileProcessor fp = new FileProcessor(cipherFile);	
+		CreateWorkers workers = new CreateWorkers(storedDecodedLines,fp,decrypter,n); 
+		workers.startWorkers(numThreads);
+	
+		//storedDecodedLines.writeToFile();
+		
 		
 
 	} // end main(...)
