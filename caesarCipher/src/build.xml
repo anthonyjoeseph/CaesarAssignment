@@ -51,11 +51,11 @@
 
 <target name="run" depends="jar">
         <java jar="${BUILD}/jar/caesarCipher.jar"  fork="true">
-        	<arg value="firstArg"/>
-       		<arg value="args-2"/>
-        	<arg value="args-3"/>
-        	<arg value="args-4"/>
-        	<arg value="args-5"/>
+        	<arg value="inputFile.txt"/>
+       		<arg value="outputFile.txt"/>
+        	<arg value="3"/>
+        	<arg value="2"/>
+        	<arg value="0"/>
         </java>
 	
     </target>

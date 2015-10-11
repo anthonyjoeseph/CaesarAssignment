@@ -16,14 +16,17 @@ public class ThreadedDecrypter implements Runnable  {
 	private int shiftValue;
 	/**
 	 * This function creates an instance of ThreadDecrypter
-	 * @return returns instance of ThreadDecrypter
+	 * @param store Stores the decrypted text
+	 * @param fp Reads the file of cipher text
+	 * @param decrypter Decrypts the text
+	 * @param shiftValue The number of characters the caesar cipher should shift
 	 */
 	public ThreadedDecrypter(DecodedStore store,FileProcessor fp,CaesarDecrypt decrypter,int shiftValue){
 		this.store = store;
 		this.fp = fp;
 		this.decrypter = decrypter;
 		this.shiftValue = shiftValue;
-		Logger.writeMessage("ThreadDecrypter Constructor called", 4);
+		Logger.writeOutput("ThreadDecrypter Constructor called", 4);
 		
 	}
 	
@@ -32,11 +35,10 @@ public class ThreadedDecrypter implements Runnable  {
 	 * This function Invokes a method in the file processor to read a single line
 	 * It decrypts the line using an instance of caesarCipher decrypt
 	 * writes the decodedline to decode store
-	 * @return no return
 	 */
     public void run() {
 	   String name = Thread.currentThread().getName();
-	   Logger.writeMessage("Thread "+ name+"'s run method has started",3);
+	   Logger.writeOutput("Thread "+ name+"'s run method has started",3);
        String cipheredLine ="";
        
 	   while((cipheredLine = fp.readLineFromFile()) != null){

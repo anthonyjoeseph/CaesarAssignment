@@ -15,19 +15,23 @@ import caesarCipher.store.DecodedStore;
 	 private CaesarDecrypt decrypter;
 	 private int shiftValue;
 	 /**
-	     * This method returns an instance of CreateWorkers
-		 * @return Instance of CreateWorkers
-		 */
-	public CreateWorkers(DecodedStore store,FileProcessor fp,CaesarDecrypt decrypter,int shiftValue){
+	 * This method returns an instance of CreateWorkers
+	 * @param store Stores the decoded text
+	 * @param fp Reads and parsed the input file
+	 * @param decrypter Decrypts the encrypted text
+	 * @param shiftValue The number of characters that must be shifted in the Caesar algorithm
+	 * @return Instance of CreateWorkers
+      	 */
+	public CreateWorkers(DecodedStore store, FileProcessor fp, CaesarDecrypt decrypter, int shiftValue){
 		this.store = store;
 		this.fp = fp;
 		this.decrypter = decrypter;
 		this.shiftValue = shiftValue;
-		Logger.writeMessage("Create Workers Constructor called", 4);
+		Logger.writeOutput("Create Workers Constructor called", 4);
 	}
 	/**
 	 * This method will start NUM_THREADS number of threadDecrypter instances.
-	 * @param The parameter was made final because the NUM_THREADs variable passed should not be changed by the method.
+	 * @param NUM_THREADS The parameter was made final because the NUM_THREADs variable passed should not be changed by the method.
 	 * @return NO return value
 	 */
 	public void startWorkers(final int NUM_THREADS){

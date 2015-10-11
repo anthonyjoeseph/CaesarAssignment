@@ -53,7 +53,9 @@ public class FileProcessor {
 		return nextLine;
 		
 	}
-	
+    /**
+     * Closes the file processor's file reader.
+     */
 	public void closeFileProcessor(){
 		
 		try {

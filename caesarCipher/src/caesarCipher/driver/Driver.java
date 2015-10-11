@@ -47,7 +47,7 @@ public class Driver{
 		}
 		else
 		{
-			System.err.println("invalid number of arguments program terminating");
+			System.err.println("Recieved " + args.length + " arguments. Expected: inputFilePath outputFilePath n numThreads debugValue. Exiting");
 			System.exit(1);
 		}
 		
@@ -55,14 +55,15 @@ public class Driver{
 		
 		
 		File cipherFile = new File(cipherText);
-		
+		File decodedFile = new File(decodedText);
+
 		CaesarDecrypt decrypter = new CaesarDecrypt();
-		DecodedStore storedDecodedLines = new DecodedStore();
-		FileProcessor fp = new FileProcessor(cipherFile);	
-		CreateWorkers workers = new CreateWorkers(storedDecodedLines,fp,decrypter,n); 
+		DecodedStore storedDecodedLines = new DecodedStore(decodedFile);
+		FileProcessor fp = new FileProcessor(cipherFile);
+		CreateWorkers workers = new CreateWorkers(storedDecodedLines,fp,decrypter,n);
 		workers.startWorkers(numThreads);
 	
-		//storedDecodedLines.writeToFile();
+		storedDecodedLines.writeToFile();
 		
 		
 

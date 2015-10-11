@@ -6,6 +6,8 @@ package caesarCipher.decrypt;
 public class CaesarDecrypt implements CaesarCipherI {
 /**
    * Decodes a ciphered line of text and returns the result.
+   * @param cipheredLine The ciphered line of text
+   * @param n 'N' in the casear cipher algorithm
    * @return The decoded line of text
    */ 
 	public String convertCipher(String cipheredLine, int n){
