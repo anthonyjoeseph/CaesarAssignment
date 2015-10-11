@@ -1,0 +1,134 @@
+[
+  adopted from http://www.cs.rochester.edu/u/www/courses/171/Fall-03/files/readme.txt
+  by Deger Cenk Erdil
+  for CS654 Distributed Systems
+  This is a template README file about how you should form your own README file.
+  In general,
+        you should remove anything in between square brackets (i.e. [..]), and
+        you should replace anything in between <> with a value.
+]
+
+CS542 Design Patterns
+Spring 2011
+PROJECT 2 README FILE
+
+Due Date: Sunday, October 11 2015
+Submission Date: Sunday, October 11 2015
+Grace Period Used This Project: 0 Days
+Grace Period Remaining: 3 Days
+Author(s): Anthony Stella and Anthony Gabriele
+e-mail(s): astella1@binghamton.edu and agabrie5@binghamton.edu
+
+
+PURPOSE:
+
+To decrypt text documents encrypted by a caesar cipher using multiple threads.
+
+PERCENT COMPLETE:
+
+[
+We believe we have completed 100% of this project.
+
+PARTS THAT ARE NOT COMPLETE:
+
+No parts are incomplete.
+
+BUGS:
+
+There are no bugs.
+
+FILES:
+
+  Included with this project are 11 files:
+
+  CaesarCipherI.java, The interface defining how to interact with CaesarDectypt
+  CaesarDecrypt.java, The model that actually decrypts strings encoded with the caesar cipher
+  CreateWorkers.java, Creates the threads that will decrypt strings
+  ThreadedDecrypter.java, Defines what how one of these threads will behave
+  Driver.java, Interfaces with the user and uses our model
+  DecodedStore.java, Handles storing the decoded texts and writing them to a file
+  DisplayI.java, Defines how to interact with DecodedStore
+  FileProcessor.java, Handles reading a given file line by line
+  Logger.java, Defines functionality that helps debug threaded code
+  Build.xml, the ANT build file containing the arguments necessary to print the file
+  README, the text file you are presently reading
+]
+
+SAMPLE OUTPUT:
+
+[
+  Copy and paste a recent CORRECT output from your test runs, ALONG with the
+  command line. Cut it short if more than 10 lines. Here is a sample:
+
+  [erdil@the_caribbean:~erdil]$ ./a.out topaz 12345 binaenaleyh
+  SOME OUTPUT
+  SOME MORE
+  WOW, IT DOES NOT END
+  [snip here] (-> if too long)
+  OH MY..
+  FINALLY
+  [erdil@the_caribbean:~erdil]$
+]
+
+TO COMPILE:
+
+[
+  Document here how your TA can build your program after extracting your
+  gzipped-tarball. (Note: ideally, TA should just do a "make". Justify extra
+  steps needed). Be as clear as possible, refer to "... FOR DUMMIES" book
+  format. Assume your TA is completely lost, trying to save the universe.
+  Here is a sample:
+
+  Just extract the files and then do a "make".
+]
+
+TO RUN:
+
+[
+  Document here how your TA can test your program after extracting your gzipped-
+  tarball. Be as clear as possible, refer to "... FOR DUMMIES" book format.
+  Assume your TA is completely lost, there is another universe. Here is a
+  sample:
+
+  Please run as: ./a.out <REGHOST> <REGPORT> <UNIQNAME>
+  For example:   ./a.out topaz 12345 binaenaleyh
+]
+
+EXTRA CREDIT:
+
+[
+  Document here extra work you have done to get bonus grade, IF THERE IS ANY.
+  Otherwise, say "N/A"
+]
+
+
+BIBLIOGRAPHY:
+
+This serves as evidence that we are in no way intending Academic Dishonesty.
+<NAMES OF GROUP MEMBERS>
+
+[
+  Document here any sources, books, internet resources you have benefited from.
+
+  Here are some samples:
+
+  * http://spring2004.cs654.allprojectsolutions.binghamtonuniversity.com
+
+  * Deitel, H. M., and Deitel P. J. Java How To Program 3/E. Upper Saddle River:
+    Prentice Hall, 1999 (pp. 385-369)
+]
+
+ACKNOWLEDGEMENT:
+
+[
+  Document here your classmates, and/or other people who have helped you.
+  DON'T ACKNOWLEDGE YOUR TEAMMATES.
+  Here is a sample:
+
+  During the coding process one or more of the following people may have been
+  consulted. Their help is greatly appreciated.
+
+  B. Gates
+  S. Jobs
+
+]
